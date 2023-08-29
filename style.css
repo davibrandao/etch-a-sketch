@@ -9,33 +9,44 @@ body {
   display: grid;
   margin: 2em;
   max-height: 55vh;
-  width: 40vw;  
+  width: 40vw;
+  user-select: none; /* Impede a seleção de texto */
+  cursor: default; /* Define o cursor como padrão */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
   /* A unidade "fr" permite dividir o espaço disponível em uma grade em frações iguais.
   Cada uma delas (colunas ou linhas) ocupam uma fração igual do espaço disponível. */
   grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr); 
+  grid-template-rows: repeat(16, 1fr);
+  gap: 0;
 }
 
 .square {
-  border: 1px solid #000;
+  border: none;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
   transition: background-color 0.5s;
 }
 .square:hover {
-    background-color: rgba(128, 128, 128, 0.5); /* Cinza com 50% de transparência */
+  background-color: rgba(
+    128,
+    128,
+    128,
+    0.5
+  ); /* Cinza com 50% de transparência */
 }
 
 @media (max-width: 600px) {
-    .container {
-        display: grid;
-        margin: 2em;
-        max-height: 40vh;
-        width: 70vw;
-        grid-template-columns: repeat(16, 1fr);
-        grid-template-rows: repeat(16, 1fr);
-        gap: 1px;
-      }
+  .container {
+    display: grid;
+    margin: 2em;
+    max-height: 40vh;
+    width: 70vw;
+    user-select: none; /* Impede a seleção de texto */
+    cursor: default; /* Define o cursor como padrão */
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 1px;
   }
+}
