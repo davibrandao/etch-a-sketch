@@ -78,6 +78,11 @@ function paintGridRainbow() {
 createGrid(16); // Tamanho inicial da grade
 paintGrid('#000');
 
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener('input', () => {
+    const selectedColor = colorPicker.value;
+    paintGrid(selectedColor);
+});
 const newGridButton = document.getElementById('new-grid-button');
 newGridButton.addEventListener('click', () => {
     const gridSize = prompt('Enter the number of squares per side for the new grid:');

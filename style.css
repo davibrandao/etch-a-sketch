@@ -80,11 +80,17 @@ h1 {
   width: 100%; /* Largura total */
   padding: 10px 0; /* Espaçamento interno vertical */
 }
-
+#color-picker {
+  width: 7em;
+  height: 7em;
+  border: none;
+  transition: background-color 0.3s;
+  outline: none;
+}
 #new-grid-button,
 #rainbow-button,
 #clear-button,
-#eraser-button {
+#eraser-button{
   width: 20%; /* Largura dos botões */
   max-height: 3em;
   background-color: #333333;
@@ -97,17 +103,18 @@ h1 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 1);
   margin-top: 25px; /* Espaçamento entre os botões */
 }
+
 #new-grid-button,
 #rainbow-button,
 #clear-button,
-#eraser-button {
+#eraser-button, #color-picker {
   transition: transform 0.3s ease-in-out;
 }
 
 #new-grid-button:hover,
 #rainbow-button:hover,
 #clear-button:hover,
-#eraser-button:hover {
+#eraser-button:hover, #color-picker:hover {
   transform: scale(1.1);
   transition: transform 0.1s ease-in-out;
 }
@@ -226,7 +233,7 @@ footer p {
   }
   .button-container {
     position: absolute;
-    bottom: -10em;
+    bottom: -15em;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -255,7 +262,7 @@ footer p {
     max-height: 20em;
   }
   .button-container {
-    top: 40%;
+    top: 65%;
   }
   #new-grid-button,
   #rainbow-button,
