@@ -1,5 +1,12 @@
 const container = document.querySelector('.container');
+const colorPicker = document.getElementById('color-picker');
+const newGridButton = document.getElementById('new-grid-button');
+const eraserButton = document.getElementById('eraser-button');
+const clearButton = document.getElementById('clear-button')
+const rainbowButton = document.getElementById('rainbow-button');
 
+
+//Gerar quadro
 function createGrid(size) {
     container.innerHTML = '';
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -11,6 +18,8 @@ function createGrid(size) {
         container.appendChild(square);
     }
 }
+
+//Limpar quadro (grid)
 function clearGrid() {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => {
@@ -18,6 +27,7 @@ function clearGrid() {
     });
 }
 
+// Função para gerar uma cor aleatória em formato hexadecimal
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -27,6 +37,7 @@ function getRandomColor() {
     return color;
 }
 
+//Função para pintar os squares
 function paintGrid(color) {
     const squares = document.querySelectorAll('.square');
     let isPainting = false; // Variável para controlar se estamos pintando
@@ -50,6 +61,7 @@ function paintGrid(color) {
     });
 
 }
+
 function paintGridRainbow() {
     const squares = document.querySelectorAll('.square');
     let isPainting = false; // Variável para controlar se estamos pintando
@@ -75,15 +87,16 @@ function paintGridRainbow() {
     });
 }
 
-createGrid(16); // Tamanho inicial da grade
-paintGrid('#000');
+createGrid(16); // Tamanho inicial da grade || Initial grid
+paintGrid('#000'); // Initial color picker
 
-const colorPicker = document.getElementById('color-picker');
+// Color picker event
 colorPicker.addEventListener('input', () => {
     const selectedColor = colorPicker.value;
     paintGrid(selectedColor);
 });
-const newGridButton = document.getElementById('new-grid-button');
+
+//New grid button event
 newGridButton.addEventListener('click', () => {
     const gridSize = prompt('Enter the number of squares per side for the new grid:');
     if (gridSize <= 64) { //verify user input
@@ -95,21 +108,19 @@ newGridButton.addEventListener('click', () => {
 
 });
 
-const eraserButton = document.getElementById('eraser-button')
+//Event - Erase
 eraserButton.addEventListener('click', () => {
     paintGrid('#fff');
 })
 
-// Função para gerar uma cor aleatória em formato hexadecimal
-
-const clearButton = document.getElementById('clear-button')
+//Event - clear grid button
 clearButton.addEventListener('click', () => {
     clearGrid();
     createGrid(16);
     paintGrid('#000');
 })
 
-const rainbowButton = document.getElementById('rainbow-button');
+//Event - random color picker
 rainbowButton.addEventListener('click', () => {
     paintGridRainbow();
 });
