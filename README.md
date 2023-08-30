@@ -12,7 +12,7 @@ The goal of this project is to create a webpage with a dynamic grid of square di
 - The grid squares change color on mouse hover, simulating a pen-like drawing effect.
 - A button at the top of the screen allows users to input the number of squares per side for a new grid.
 - The existing grid is replaced with a new grid of the specified size while maintaining the total space.
-- User input is limited to a maximum of 100 squares per side to prevent performance issues.
+- User input is limited to a maximum of 64 squares per side to prevent performance issues.
 
 ## Getting Started
 

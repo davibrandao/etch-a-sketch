@@ -92,7 +92,7 @@ newGridButton.addEventListener('click', () => {
 
 const eraserButton = document.getElementById('eraser-button')
 eraserButton.addEventListener('click', () => {
-    paintGrid('#f0f0f0');
+    paintGrid('#fff');
 })
 
 // Função para gerar uma cor aleatória em formato hexadecimal

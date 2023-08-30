@@ -21,6 +21,7 @@ h1 {
 }
 .container {
   position: relative;
+  background-color: #fff;
   display: grid;
   margin: 2em;
   margin-top: 10em;
@@ -100,7 +101,7 @@ h1 {
 #rainbow-button,
 #clear-button,
 #eraser-button {
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
 }
 
 #new-grid-button:hover,
@@ -108,7 +109,7 @@ h1 {
 #clear-button:hover,
 #eraser-button:hover {
   transform: scale(1.1);
-  transition: transform 0.1s ease-in-out; 
+  transition: transform 0.1s ease-in-out;
 }
 footer {
   position: fixed;
@@ -125,100 +126,188 @@ footer p {
   margin: 0;
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .container {
-    position: relative;
     display: grid;
-    margin: 5em auto 2em auto; /* Ajuste esta linha para posicionar o container */
-    max-height: 45vh;
-    min-height: 25em;
-    width: 60vw;
+    min-height: 10em;
+    max-height: 35em;
+    margin: 2em;
+    width: 40em;
     user-select: none;
     cursor: default;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     gap: 0;
   }
+  #container {
+    margin-top: 10em;
+    position: relative;
+  }
   .button-container {
+    position: absolute;
+    bottom: -50em;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: static;
+    right: -120px;
+    box-sizing: border-box;
     width: 100%;
-    margin-top: 25px;
   }
+
   #new-grid-button,
   #rainbow-button,
   #clear-button,
   #eraser-button {
-    width: 10em;
-    height: 4.5vh;
-    background-color: #333333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s ease-in-out;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
-  }
-  .header {
-    margin-bottom: 5em;
-  }
-  #container {
-    margin-top: 7em;
-  }
-  #title {
-    font-size: 50px;
-    padding: 5px 0;
+    width: 20em;
+    font-size: 25px;
   }
 }
+
 @media (max-width: 820px) {
   .container {
     display: grid;
-    margin: 2em;
     min-height: 10em;
     max-height: 35em;
+    margin: 2em;
     width: 40em;
-    user-select: none; /* Impede a seleção de texto */
-    cursor: default; /* Define o cursor como padrão */
+    user-select: none;
+    cursor: default;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     gap: 0;
   }
   #container {
     margin-top: 10em;
+    position: relative;
   }
   .button-container {
     position: absolute;
-    bottom: 10px; /* Posiciona os botões a 10px acima da parte inferior do .container */
-    left: 50%; /* Centraliza horizontalmente os botões */
-    transform: translateX(-50%); /* Centraliza horizontalmente os botões */
+    bottom: -15em;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top: 55%;
-    right: -120px; /* Ajuste essa posição para alinhar com o .container */
+    right: -120px;
     box-sizing: border-box;
-    width: 100%; /* Largura total */
+    width: 100%;
+  }
+
+  #new-grid-button,
+  #rainbow-button,
+  #clear-button,
+  #eraser-button {
+    width: 20em;
+    font-size: 25px;
+  }
+}
+
+/* Consulta de mídia para telas de até 600px */
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    min-height: 10em;
+    max-height: 25em;
+    margin: 2em;
+    width: 35em;
+    user-select: none;
+    cursor: default;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 0;
+  }
+  #container {
+    margin-top: 10em;
+    position: relative;
+  }
+  .button-container {
+    position: absolute;
+    bottom: -10em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    right: -120px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  #new-grid-button,
+  #rainbow-button,
+  #clear-button,
+  #eraser-button {
+    width: 20em;
+    font-size: 25px;
+  }
+}
+@media (max-width: 600px) {
+  #title {
+    font-size: 50px;
+  }
+  .container {
+    min-height: 10em;
+    max-height: 20em;
+  }
+  .button-container {
+    top: 40%;
   }
   #new-grid-button,
   #rainbow-button,
   #clear-button,
   #eraser-button {
-    width: 15em;
-    height: 4.5vh;
-    background-color: #333333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+    width: 13em;
     font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
-    margin-top: 25px; /* Espaçamento entre os botões */
+  }
+} 
+
+/* Consulta de mídia para telas de até 390px */
+@media (max-width: 390px) {
+  #title {
+    font-size: 40px;
+  }
+  #container {
+    margin-top: 7em;
+  }
+  .container {
+    min-height: 10em;
+    max-height: 15em;
+  }
+  .button-container {
+    top: 40%;
+  }
+  #new-grid-button,
+  #rainbow-button,
+  #clear-button,
+  #eraser-button {
+    width: 13em;
+    font-size: 20px;
+  }
+}
+@media (max-width: 375px) {
+  #title {
+    font-size: 40px;
+  }
+  #container {
+    margin-top: 7em;
+  }
+  .container {
+    min-height: 10em;
+    max-height: 15em;
+  }
+  .button-container {
+    top: 40%;
+  }
+  #new-grid-button,
+  #rainbow-button,
+  #clear-button,
+  #eraser-button {
+    width: 13em;
+    font-size: 20px;
   }
 }
