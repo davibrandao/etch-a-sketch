@@ -12,8 +12,12 @@ function createGrid(size) {
     }
 }
 function clearGrid() {
-    container.innerHTML = '';
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.style.backgroundColor = '';
+    });
 }
+
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
